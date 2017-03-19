@@ -1,6 +1,5 @@
 <template>
   <div class="header">
-    {{msg}}
   </div>
 </template>
 
@@ -8,8 +7,20 @@
   export default {
     data () {
       return {
-        msg: '我是header组件'
+        seller: {}
       }
+    },
+    created () {
+      this.$http.get('/api/seller')
+        .then((res) => {
+          console.log(res)
+          if (res.data.errno === 0) {
+            this.seller = res.data.data
+          }
+        })
+        .catch((error) => {
+          console.log(error)
+        })
     }
   }
 </script>

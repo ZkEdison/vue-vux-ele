@@ -6,3 +6,7 @@ yarn-error.log
 test/unit/coverage
 test/e2e/reports
 selenium-debug.log
+*.xml
+.idea/vcs.xml
+.idea/vue-vux-ele.iml
+.idea/vcs.xml
